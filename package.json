@@ -1,7 +1,7 @@
 {
   "name": "@dsh-external/sciverse",
   "version": "0.0.1",
-  "description": "SciVerse 7 API 接入 DSH 插件：agentic-search / content / resource / meta-catalog / meta-paper-relations / meta-search / paper-schema",
+  "description": "为 SciVerse 科学数据平台创建的 DSH 插件：接入 agentic-search / content / resource / meta-catalog / meta-paper-relations / meta-search / paper-schema 七个 API",
   "private": true,
   "type": "module",
   "main": "./lib/index.js",
