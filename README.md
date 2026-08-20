@@ -4,6 +4,15 @@
 
 DSH 插件：接入 SciVerse 的 7 个公开 API，供 Agent 做科研检索、原文读取、附件下载与结构化论文图谱实验。
 
+## 如何申请 API Key
+
+1. 打开 SciVerse 控制台：<https://sciverse.space/tokens>
+2. 登录账号后，在「密钥 / Tokens」页面点击创建。
+3. Token 创建后只会完整显示一次，请立即保存到安全的地方。
+4. 在 DSH 中使用时，把 Token 配置为环境变量 `SCIVERSE_API_TOKEN`，或写入本地凭据文件。
+
+> 同一套 API Key 可用于 Sciverse、点石 DianShi、SeqStudio 与 Skills 能力。
+
 ## 覆盖接口
 
 | 工具名 | 对应 API | 说明 |
@@ -15,6 +24,36 @@ DSH 插件：接入 SciVerse 的 7 个公开 API，供 Agent 做科研检索、�
 | `sciverse_meta_paper_relations` | `POST /meta-paper-relations` | 引用 / 被引 / 相关工作分页 |
 | `sciverse_meta_search` | `POST /meta-search` | 结构化元数据检索 |
 | `sciverse_paper_schema` | `/paper-schema/*` | Paper Schema 18 个子操作通用入口 |
+
+## 使用方式
+
+插件注入到 DSH 后，直接在对话里让 Agent 调用即可，不需要手写 HTTP 请求。
+
+```text
+用 sciverse_agentic_search 查一下 "graphene battery cycle stability"
+```
+
+拿到 `doc_id` 后继续读原文：
+
+```text
+对第一个结果的 doc_id 调用 sciverse_content，读前 1000 个字符
+```
+
+组合检索与引用关系：
+
+```text
+先用 sciverse_meta_search 按 2022 年以后的论文筛选 graphene battery，
+再对第一篇论文用 sciverse_meta_paper_relations 查它的参考文献
+```
+
+也可以显式指定参数：
+
+```text
+调用 sciverse_agentic_search：
+query = "large language model agent"
+top_k = 5
+filters = {"lang": "en", "publication_published_year": {"gte": 2022}}
+```
 
 ## 配置
 
