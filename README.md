@@ -1,5 +1,7 @@
 # @dsh-external/sciverse
 
+本插件是为 [SciVerse 科学数据平台](https://sciverse.space) 创建的 DSH 插件。SciVerse 是面向科研 Agent 和 RAG 场景的科学数据 API 平台，提供可信文献检索、evidence chunk、全文读取、附件下载与结构化论文图谱能力。这个插件把 SciVerse 的 7 个公开接口封装成 DSH Agent 可直接调用的工具，方便你基于自己的 SciVerse API Key 做科研检索、综述和实验。
+
 DSH 插件：接入 SciVerse 的 7 个公开 API，供 Agent 做科研检索、原文读取、附件下载与结构化论文图谱实验。
 
 ## 覆盖接口
