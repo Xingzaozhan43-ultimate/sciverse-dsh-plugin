@@ -6,7 +6,7 @@ DSH 插件：接入 SciVerse 的 7 个公开 API，供 Agent 做科研检索、�
 
 ## 如何申请 API Key
 
-1. 打开 SciVerse 控制台：<https://sciverse.space/tokens>
+1. 打开 SciVerse 控制台：<https://sciverse.space>
 2. 登录账号后，在「密钥 / Tokens」页面点击创建。
 3. Token 创建后只会完整显示一次，请立即保存到安全的地方。
 4. 在 DSH 中使用时，把 Token 配置为环境变量 `SCIVERSE_API_TOKEN`，或写入本地凭据文件。
